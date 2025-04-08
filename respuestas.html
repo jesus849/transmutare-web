@@ -44,18 +44,17 @@
   <div id="contenedor-respuestas">Cargando respuestas...</div>
 
   <script>
-    const contenedor = document.getElementById('contenedor-respuestas');
-
     fetch("https://script.google.com/macros/s/AKfycbyYeNeIFWgRjrQmU5WNwzUJz3vHa7lzHotp8ObD4z6qRymuhDsGh3P9OhxJ3VEEnbeQJQ/exec")
-    .then(response => response.text())
+      .then(res => res.text())
       .then(html => {
-        contenedor.innerHTML = html;
+        document.getElementById("contenedor-respuestas").innerHTML = html;
       })
-      .catch(error => {
-        console.error('Error al cargar respuestas:', error);
-        contenedor.innerHTML = '<p>No se pudieron cargar las respuestas. Intenta más tarde.</p>';
+      .catch(err => {
+        document.getElementById("contenedor-respuestas").innerHTML =
+          "<p>No se pudieron cargar las respuestas. Intenta más tarde.</p>";
       });
   </script>
+  
 </body>
 </html>
 

@@ -44,7 +44,7 @@
   <div id="contenedor-respuestas">Cargando respuestas...</div>
 
   <script>
-    fetch("https://script.google.com/macros/s/AKfycbyYeNeIFWgRjrQmU5WNwzUJz3vHa7lzHotp8ObD4z6qRymuhDsGh3P9OhxJ3VEEnbeQJQ/exec")
+    fetch("https://script.google.com/macros/s/AKfycbwKdmJCYLvHp5j5qJwYPvPtOlMh-YWYFFSkGv5vYjqIU4CICpg70SpbtBXOCHiVPnnThA/exec")
       .then(res => res.text())
       .then(html => {
         document.getElementById("contenedor-respuestas").innerHTML = html;
@@ -54,6 +54,7 @@
           "<p>No se pudieron cargar las respuestas. Intenta más tarde.</p>";
       });
   </script>
+  
   
 </body>
 </html>

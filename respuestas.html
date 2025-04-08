@@ -46,8 +46,8 @@
   <script>
     const contenedor = document.getElementById('contenedor-respuestas');
 
-    fetch('https://script.google.com/macros/s/AKfycbyYeNeIFWgRjrQmU5WNwzUJz3vHa7lzHotp8ObD4z6qRymuhDsGh3P9OhxJ3VEEnbeQJQ/exec')
-      .then(response => response.text())
+    fetch("https://script.google.com/macros/s/AKfycbyYeNeIFWgRjrQmU5WNwzUJz3vHa7lzHotp8ObD4z6qRymuhDsGh3P9OhxJ3VEEnbeQJQ/exec")
+    .then(response => response.text())
       .then(html => {
         contenedor.innerHTML = html;
       })

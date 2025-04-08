@@ -40,14 +40,20 @@
   </style>
 </head>
 <body>
-  <h1>Respuestas que te ayudaran </h1>
+  <h1>Respuestas que te ayudarán</h1>
+  <div id="contenedor-respuestas"></div>
 
-  <div class="respuesta">
-    <p class="entrada"><strong>Mensaje:</strong> “Siento que me pierdo en mis pensamientos y no sé si es real.”</p>
-    <p class="respuesta-texto"><strong>Respuesta:</strong> Lo real es lo que sentís, no lo que temés que pase. Observate, no reacciones. Estás más presente de lo que creés.</p>
-  </div>
-
- 
-
+  <script>
+    fetch("https://script.google.com/macros/s/AKfycbzohDqglZYeL1o7IlLZIZM4ZreTkMxnEGefvFCIRrk_u1c25ejhng1JLnX2j2jkd1R_Rg/exec")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("contenedor-respuestas").innerHTML = data;
+      })
+      .catch(error => {
+        console.error("Error al cargar respuestas:", error);
+        document.getElementById("contenedor-respuestas").innerHTML = "<p>No se pudieron cargar las respuestas. Intenta más tarde.</p>";
+      });
+  </script>
 </body>
 </html>
+

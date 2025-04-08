@@ -41,17 +41,19 @@
 </head>
 <body>
   <h1>Respuestas que te ayudarán</h1>
-  <div id="contenedor-respuestas"></div>
+  <div id="contenedor-respuestas">Cargando respuestas...</div>
 
   <script>
-    fetch("https://script.google.com/macros/s/AKfycbzohDqglZYeL1o7IlLZIZM4ZreTkMxnEGefvFCIRrk_u1c25ejhng1JLnX2j2jkd1R_Rg/exec")
+    const contenedor = document.getElementById('contenedor-respuestas');
+
+    fetch('https://script.google.com/macros/s/AKfycbyYeNeIFWgRjrQmU5WNwzUJz3vHa7lzHotp8ObD4z6qRymuhDsGh3P9OhxJ3VEEnbeQJQ/exec')
       .then(response => response.text())
-      .then(data => {
-        document.getElementById("contenedor-respuestas").innerHTML = data;
+      .then(html => {
+        contenedor.innerHTML = html;
       })
       .catch(error => {
-        console.error("Error al cargar respuestas:", error);
-        document.getElementById("contenedor-respuestas").innerHTML = "<p>No se pudieron cargar las respuestas. Intenta más tarde.</p>";
+        console.error('Error al cargar respuestas:', error);
+        contenedor.innerHTML = '<p>No se pudieron cargar las respuestas. Intenta más tarde.</p>';
       });
   </script>
 </body>
